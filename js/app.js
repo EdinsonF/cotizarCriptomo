@@ -15,7 +15,11 @@ formulario.addEventListener('submit', (e)=>{
         //enviar mensaje error
         ui.mostrarMensaje('Ambos campos son obligatorios', 'alert bg-danger text-center');
     }else{
-        //llenar el select decripto moneda
+        //todo bien
+        api.consultarMonedas(monedaSeleccionada,monedaCriptoSeleccionada)
+        .then(data=>{
+            ui.montrarResultado(data.resultado.RAW,monedaSeleccionada,monedaCriptoSeleccionada);
+        });
 
     }
 
